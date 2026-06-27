@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tìm kiếm — Coder-like</title>
+  <meta name="description" content="Tìm kiếm tài liệu và bài viết trên site." />
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Tinh chỉnh cho trang tìm kiếm */
+    .search-page .search-header{
+      background:#fff;padding:18px;border-radius:10px;margin-bottom:18px;box-shadow:0 1px 0 rgba(16,24,40,0.03)
+    }
+    .gcse-searchbox-only, .gcse-searchresults-only { width:100%; }
+    /* Gõ lại style cho kết quả để khớp giao diện */
+    .gsc-control-cse {
+      font-family: inherit;
+    }
+    .gsc-webResult .gsc-result { background: #fff; border-radius:10px; padding:12px; margin-bottom:12px; box-shadow:0 1px 0 rgba(16,24,40,0.03) }
+    .gsc-webResult .gs-title { font-size:18px; color:#0f172a }
+    .gsc-webResult .gs-snippet { color: #6b7280; }
+    /* Remove default Google borders that clash */
+    .gsc-results .gsc-cursor-box { margin-top:12px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/images/TamAnClub_logo.png" alt="TamAnClub Logo" height="120" />
+        <span class="site-title">TamAnClub</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="categories.html">Danh mục</a>
+        <a href="about.html">Giới thiệu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container site-main search-page" style="padding-top:28px;">
+    <div class="layout" style="grid-template-columns:1fr 320px;">
+      <section class="content">
+        <div class="search-header">
+          <!-- Google CSE search box only -->
+          <div id="search-box">
+            <gcse:searchbox-only></gcse:searchbox-only>
+          </div>
+        </div>
+
+        <!-- Search results -->
+        <div id="search-results">
+          <gcse:searchresults-only></gcse:searchresults-only>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="widget">
+          <h3>Bộ lọc</h3>
+          <!-- <p style="color:var(--muted);font-size:14px">Google CSE tự xử lý kết quả; dùng tính năng Categories/labels trong CSE console để tạo bộ lọc.</p> -->
+        </div>
+
+        <div class="widget widget-recent">
+          <h3>Bài viết mới</h3>
+          <ul>
+            <!-- <li><a href="posts/async-js.html">Async/await từng bước</a></li>
+            <li><a href="posts/node-deploy.html">Deploy Node.js tĩnh</a></li>
+            <li><a href="posts/accessibility.html">Accessibility cơ bản</a></li> -->
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 TamAnClub. Website này là một đóng góp vào <b>Dự án 1000 tài liệu chuyển ngữ về Lập trình máy tính dành cho người Việt</b> của Câu lạc bộ Lập trình Tâm An.</p>
+        <nav class="footer-nav">
+          <a href="privacy.html">Chính sách</a>
+          <a href="about.html">Liên hệ</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Google CSE script: thay YOUR_CSE_ID bằng ID của bạn -->
+  <script async src="https://cse.google.com/cse.js?cx=e1b7cbcbf8b494e31"></script>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Auto-focus search input khi trang load nếu có param q -> fill vào box bằng cách dispatch search
+    (function(){
+      function getQueryParam(name){
+        var params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+      var q = getQueryParam('q');
+      if(q){
+        // khi CSE đã load, set q và trigger
+        window.addEventListener('load', function(){
+          try {
+            var input = document.querySelector('input.gsc-input');
+            if(input){
+              input.value = q;
+              // submit CSE form if present
+              var form = input.closest('form');
+              if(form) form.submit();
+            }
+          } catch(e){}
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

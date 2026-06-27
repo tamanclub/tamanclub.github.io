@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Danh mục — TamAnClub</title>
+  <meta name="description" content="Danh mục bài viết: Basic, 3D, C, C++." />
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .categories-hero{background:#fff;padding:20px;border-radius:12px;margin-bottom:18px;box-shadow:0 1px 0 rgba(16,24,40,0.03)}
+    .categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .category-card{background:var(--card);padding:16px;border-radius:10px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 rgba(16,24,40,0.03)}
+    .category-card h3{margin:0;font-size:18px}
+    .category-meta{color:var(--muted);font-size:14px}
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .tag{background:#eef2ff;color:var(--accent);padding:6px 10px;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="assets/images/TamAnClub_logo.png" alt="TamAnClub Logo" height="120" />
+        <span class="site-title">TamAnClub</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="categories.html">Danh mục</a>
+        <a href="about.html">Giới thiệu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container site-main" style="padding-top:28px">
+    <div class="categories-hero">
+      <h1>Danh mục</h1>
+      <p style="color:var(--muted);margin:6px 0 0 0">Duyệt theo chủ đề</p>
+    </div>
+
+    <section class="categories-list" style="display:grid;grid-template-columns:1fr 320px;gap:24px">
+      <div>
+        <div class="categories-grid">
+          <a class="category-card" href="categories/basic.html">
+            <h3>Cơ bản</h3>
+            <p class="category-meta">01 bài · Kids, Beginners</p>
+          </a>
+
+          <!-- <a class="category-card" href="categories/backend.html">
+            <h3>Backend</h3>
+            <p class="category-meta">12 bài · Node.js, Databases, APIs</p>
+          </a>
+
+          <a class="category-card" href="categories/css.html">
+            <h3>CSS</h3>
+            <p class="category-meta">10 bài · Layout, Flexbox, Grid</p>
+          </a>
+
+          <a class="category-card" href="categories/html.html">
+            <h3>HTML</h3>
+            <p class="category-meta">8 bài · Semantic, Accessibility</p>
+          </a>
+
+          <a class="category-card" href="categories/devops.html">
+            <h3>DevOps</h3>
+            <p class="category-meta">6 bài · CI/CD, Docker, Deployment</p>
+          </a>
+
+          <a class="category-card" href="categories/tools.html">
+            <h3>Tools</h3>
+            <p class="category-meta">9 bài · Utilities, Productivity</p>
+          </a> -->
+        </div>
+
+        <!-- Nếu muốn: phân trang hoặc load thêm -->
+        <nav class="pagination" style="margin-top:18px">
+          <a class="page-link" href="#prev">‹ Prev</a>
+          <a class="page-link" href="#1">1</a>
+          <a class="page-link" href="#2">2</a>
+          <a class="page-link" href="#next">Next ›</a>
+        </nav>
+      </div>
+
+      <aside class="sidebar">
+        <div class="widget">
+          <!-- <h3>Bộ lọc theo tag</h3>
+          <div class="tag-cloud">
+            <a class="tag" href="tags/html.html">HTML</a>
+            <a class="tag" href="tags/css.html">CSS</a>
+            <a class="tag" href="tags/javascript.html">JavaScript</a>
+            <a class="tag" href="tags/react.html">React</a>
+            <a class="tag" href="tags/nodejs.html">Node.js</a>
+            <a class="tag" href="tags/devops.html">DevOps</a>
+          </div> -->
+        </div>
+
+        <div class="widget">
+          <!-- <h3>Bài viết nổi bật</h3>
+          <ul style="margin:0;padding-left:18px;color:var(--muted)">
+            <li><a href="posts/html-basics.html">HTML cơ bản — Tài liệu &amp; Hướng dẫn tải về</a></li>
+            <li><a href="posts/css-flexbox.html">CSS Flexbox từ Zero đến Pro</a></li>
+            <li><a href="posts/async-js.html">Async/await từng bước</a></li>
+          </ul> -->
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="margin-top:28px">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© 2026 TamAnClub. Website này là một đóng góp vào <b>Dự án 1000 tài liệu chuyển ngữ về Lập trình máy tính dành cho người Việt</b> của Câu lạc bộ Lập trình Tâm An.</p>
+        <nav class="footer-nav">
+          <a href="privacy.html">Chính sách</a>
+          <a href="about.html">Liên hệ</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
